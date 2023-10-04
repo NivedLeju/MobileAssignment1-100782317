@@ -30,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
             double interestRate = Double.parseDouble(interestRateEditText.getText().toString());
 
             // Convert interest rate from annual to monthly and percentage to decimal
-            interestRate = interestRate / 12 / 100;  
-
+            interestRate = interestRate / 12 / 100;
             // Calculate monthly EMI
             double emi = (principal * interestRate * Math.pow(1 + interestRate, tenure)) /
                     (Math.pow(1 + interestRate, tenure) - 1);
