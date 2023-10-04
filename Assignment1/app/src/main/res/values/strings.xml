@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Assignment1</string>
+    <string name="calculate_emi">Calculate EMI</string>
+    <string name="enter_interest_rate">Enter Annual Interest Rate (%)</string>
+    <string name="enter_principal_amount">Enter Principal Amount</string>
+    <string name="enter_tenure_in_years">Enter Tenure (in years)</string>
+    <string name="emi_calculator">EMI Calculator</string>
+    <string name="monthly_payment_amount">Monthly Payment Amount</string>
+</resources>
