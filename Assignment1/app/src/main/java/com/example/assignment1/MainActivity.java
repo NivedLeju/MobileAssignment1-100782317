@@ -1,6 +1,8 @@
 package com.example.assignment1;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,20 +24,24 @@ public class MainActivity extends AppCompatActivity {
         tenureEditText = findViewById(R.id.tenureEditText);
         interestRateEditText = findViewById(R.id.interestRateEditText);
         calculateButton = findViewById(R.id.calculateButton);
-        resultTextView = findViewById(R.id.resultTextView);
 
         calculateButton.setOnClickListener(v -> {
+            //declaring variables and initializing them
             double principal = Double.parseDouble(principalEditText.getText().toString());
             double tenure = Double.parseDouble(tenureEditText.getText().toString());
             double interestRate = Double.parseDouble(interestRateEditText.getText().toString());
 
             // Convert interest rate from annual to monthly and percentage to decimal
-            interestRate = interestRate / 12 / 100;
+            interestRate = interestRate /12/100;
+            tenure = tenure*12;
             // Calculate monthly EMI
             double emi = (principal * interestRate * Math.pow(1 + interestRate, tenure)) /
                     (Math.pow(1 + interestRate, tenure) - 1);
 
-            resultTextView.setText("Your monthly EMI is: " + String.format("%.2f", emi/12));
+            //created intent and passed emi value in intent to be displayed on second page
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+            intent.putExtra("emiResult", emi); // Pass the emiResult value
+            startActivity(intent);
         });
     }
 }

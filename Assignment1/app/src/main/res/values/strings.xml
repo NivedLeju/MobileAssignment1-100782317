@@ -7,4 +7,9 @@
     <string name="emi_calculator">EMI Calculator</string>
     <string name="monthly_payment_amount">Monthly Payment Amount</string>
     <string name="backButton">Back Button</string>
+    <string name="RevertToMain">back to main</string>
+    <string name="Result">Result</string>
+    <string name="EMI">"EMI: "</string>
+    <string name="UnsetValue" />
+    <string name="Unset">EMI</string>
 </resources>
