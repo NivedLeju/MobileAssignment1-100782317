@@ -6,4 +6,5 @@
     <string name="enter_tenure_in_years">Enter Tenure (in years)</string>
     <string name="emi_calculator">EMI Calculator</string>
     <string name="monthly_payment_amount">Monthly Payment Amount</string>
+    <string name="backButton">Back Button</string>
 </resources>

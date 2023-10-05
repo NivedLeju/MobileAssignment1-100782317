@@ -7,18 +7,27 @@
     android:background="#FFFFFF"
     android:backgroundTint="#0B0B0B"
     android:backgroundTintMode="add"
-    android:foregroundTint="#000000"
-    android:padding="16dp">
+    android:foregroundTint="#000000">
 
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginBottom="13dp"
+        android:background="#673AB7"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/principalEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/principalEditText"
         android:layout_width="349dp"
         android:layout_height="62dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="77dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="13dp"
         android:autofillHints=""
         android:hint="@string/enter_principal_amount"
         android:inputType="numberDecimal"
@@ -29,17 +38,16 @@
         android:textColorHint="#0E0D0D"
         app:layout_constraintBottom_toTopOf="@+id/tenureEditText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
         android:id="@+id/tenureEditText"
-        android:layout_width="352dp"
+        android:layout_width="349dp"
         android:layout_height="65dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="34dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="18dp"
         android:hint="@string/enter_tenure_in_years"
         android:inputType="numberDecimal"
         android:textColor="#020202"
@@ -51,11 +59,12 @@
 
     <EditText
         android:id="@+id/interestRateEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="344dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="68dp"
         android:autofillHints=""
         android:hint="@string/enter_interest_rate"
         android:inputType="numberDecimal"
@@ -64,14 +73,15 @@
         android:textColorHint="#0C0C0C"
         app:layout_constraintBottom_toTopOf="@+id/calculateButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tenureEditText" />
 
     <Button
         android:id="@+id/calculateButton"
         android:layout_width="151dp"
         android:layout_height="54dp"
         android:layout_marginStart="17dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="259dp"
         android:background="#000000"
         android:backgroundTint="#000000"
@@ -82,7 +92,7 @@
         android:textColorHint="#EDE8E8"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/interestRateEditText" />
 
@@ -91,12 +101,13 @@
         android:layout_width="155dp"
         android:layout_height="51dp"
         android:layout_marginStart="47dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="65dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="280dp"
         android:backgroundTint="#E8E4E4"
         android:gravity="center"
         android:shadowColor="#838383"
+        android:shadowRadius="2"
         android:text="@string/monthly_payment_amount"
         android:textAlignment="gravity"
         android:textColor="#000000"
@@ -104,28 +115,16 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toEndOf="@+id/calculateButton"
         app:layout_constraintTop_toBottomOf="@+id/interestRateEditText"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="429dp"
-        android:layout_height="51dp"
-        android:background="#673AB7"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@+id/principalEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="167dp"
         android:layout_height="46dp"
+        android:layout_marginTop="24dp"
         android:gravity="center|center_horizontal"
         android:text="@string/emi_calculator"
         android:textAlignment="gravity"
